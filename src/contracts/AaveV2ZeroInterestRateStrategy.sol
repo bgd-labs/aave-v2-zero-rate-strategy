@@ -1,5 +1,5 @@
-// SPDX-License-Identifier: agpl-3.0
-pragma solidity 0.8.17;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
 
 import {ILendingPoolAddressesProvider} from 'aave-address-book/AaveV2Ethereum.sol';
 

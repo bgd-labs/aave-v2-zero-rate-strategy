@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.17;
+pragma solidity ^0.8.0;
 
 import 'forge-std/Test.sol';
 
@@ -27,8 +27,6 @@ contract AaveV2ZeroInterestRateStrategyTest is Test {
     RENFILZeroStrategyPayload proposalPayload = new RENFILZeroStrategyPayload(
       address(zeroStrategy)
     );
-
-    emit log_address(strategyRenFilBefore);
 
     address[] memory targets = new address[](1);
     targets[0] = address(proposalPayload);
@@ -61,6 +59,5 @@ contract AaveV2ZeroInterestRateStrategyTest is Test {
       .interestRateStrategyAddress;
 
     assertEq(strategyRenFilAfter, address(zeroStrategy));
-    emit log_address(strategyRenFilAfter);
   }
 }
