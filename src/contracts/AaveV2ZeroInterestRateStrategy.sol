@@ -12,7 +12,7 @@ import {ILendingPoolAddressesProvider} from 'aave-address-book/AaveV2Ethereum.so
  * Not implementing any interface because the one on protocol-v2 was already incomplete,
  * but respecting all functions on `DefaultReserveInterestRateStrategy`
  * @author BGD Labs
- **/
+ */
 contract AaveV2ZeroInterestRateStrategy {
   ILendingPoolAddressesProvider public immutable addressesProvider;
 
