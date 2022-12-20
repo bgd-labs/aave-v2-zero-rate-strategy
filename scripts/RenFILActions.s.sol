@@ -19,7 +19,7 @@ contract DeployZeroStrategy is Script {
 contract DeployProposalPayload is Script {
   function run() external {
     vm.startBroadcast();
-    new RENFILZeroStrategyPayload(address(0)); // TODO add strategy address
+    new RENFILZeroStrategyPayload(0x311C866D55456e465e314A3E9830276B438A73f0);
     vm.stopBroadcast();
   }
 }
@@ -64,9 +64,10 @@ library DeployL1Proposal {
 }
 
 contract CreateGovProposal is Script {
-  address internal constant ZERO_RATE_PAYLOAD = address(0); // TODO
+  address internal constant ZERO_RATE_PAYLOAD = 0xBFcF7a2D4A91e91c72cdcf07eC65de6bF507DaAb;
 
-  bytes32 internal constant IPFS_HASH = bytes32(0); // TODO
+  bytes32 internal constant IPFS_HASH =
+    0x6e0d5a583e556e7bd8d1b9e3456b34ac085539320e248446792ea3600af12af0;
 
   function run() external {
     DeployL1Proposal.Execution[] memory executions = new DeployL1Proposal.Execution[](1);

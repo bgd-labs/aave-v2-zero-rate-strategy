@@ -12,7 +12,7 @@ contract AaveV2ZeroInterestRateStrategyTest is Test {
   address public constant RENFIL = 0xD5147bc8e386d91Cc5DBE72099DAC6C9b99276F5;
 
   function setUp() public {
-    vm.createSelectFork(vm.rpcUrl('mainnet'), 16205270);
+    vm.createSelectFork(vm.rpcUrl('mainnet'), 16219890);
   }
 
   function testZeroStrategyActivation() public {
@@ -21,8 +21,8 @@ contract AaveV2ZeroInterestRateStrategyTest is Test {
       .getReserveData(RENFIL)
       .interestRateStrategyAddress;
 
-    AaveV2ZeroInterestRateStrategy zeroStrategy = new AaveV2ZeroInterestRateStrategy(
-      AaveV2Ethereum.POOL_ADDRESSES_PROVIDER
+    AaveV2ZeroInterestRateStrategy zeroStrategy = AaveV2ZeroInterestRateStrategy(
+      0x311C866D55456e465e314A3E9830276B438A73f0
     );
     RENFILZeroStrategyPayload proposalPayload = new RENFILZeroStrategyPayload(
       address(zeroStrategy)
